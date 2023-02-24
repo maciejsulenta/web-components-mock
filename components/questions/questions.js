@@ -24,7 +24,7 @@ class Questions extends HTMLElement {
               `).join('')}
             </div>
           </div>
-          <img class="questions__hand-icon" src="../landing/assets/images/hand1.png"/>
+          <img class="questions__hand-icon" src="assets/images/hand1.png"/>
           <aside-section-info>Q&A</aside-section-info>
         </div>
       `;

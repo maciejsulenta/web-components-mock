@@ -11,7 +11,7 @@ class Navbar extends HTMLElement {
           ${menuItems.map((item) => `<li class="nav__item"><a class="nav__link" href="#${item}">${item.replace('-', ' ')}</a></li>`).join("")}
         </ul>
         <div class="nav__icon-container">
-          <img class="nav__menu-icon" alt="menu-icon" src="../landing/assets/images/menuIcon.svg"/>
+          <img class="nav__menu-icon" alt="menu-icon" src="assets/images/menuIcon.svg"/>
         </div>
         <div class="nav__burger-container">
           <div class="nav__burger-icon"/>

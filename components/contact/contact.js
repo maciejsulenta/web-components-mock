@@ -55,7 +55,7 @@ class Contact extends HTMLElement {
               <div class="socials-wrap">
                 ${contact.map((item, index) => `
                   <div class="socials-wrap__item">
-                    <img src="../landing/assets/images/arrow1.svg"/>
+                    <img src="assets/images/arrow1.svg"/>
                     <a class="socials-wrap__link" href="${links[index]}"><description-small>${item}</description-small></a>
                   </div>
                 `).join('')}
@@ -63,7 +63,7 @@ class Contact extends HTMLElement {
             </div>
           </div>
           <a href="#home" class="scroll-button">
-            <img src="../landing/assets/images/arrow.png"/>
+            <img src="assets/images/arrow.png"/>
           </a>
           <aside-section-info>contact us</aside-section-info>
         </div>
