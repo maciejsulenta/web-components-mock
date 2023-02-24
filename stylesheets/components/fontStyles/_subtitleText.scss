@@ -1,0 +1,21 @@
+@use "../../abstracts/" as *;
+@use "../../base/" as *;
+
+.subtitle-text {
+  font-size: $f-size-subtitle;
+  line-height: 133%;
+  font-family: $f-family-oswald;
+  font-weight: $f-weight-semibold;
+  letter-spacing: 0.1em;
+  color: $color-white;
+
+  @include mobileMaxBreakPoint {
+    font-size: $f-size-big;
+  }
+
+  &--center {
+    @include mobileMaxBreakPoint {
+      text-align: center;
+    }
+  }
+}

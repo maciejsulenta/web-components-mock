@@ -1,0 +1,215 @@
+@use "../../abstracts/" as *;
+@use "../../base/" as *;
+
+.nav {
+  position: fixed;
+  z-index: $zindex-navbar;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  transition: $anim-normal-ease;
+  height: 4rem;
+  background-color: $color-black-opacity;
+  text-transform: uppercase;
+
+  &--active {
+    background-color: $color-black;
+  }
+
+  @include mobileMaxBreakPoint {
+    min-height: 70px;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    transform: scaleX(-1);
+    width: 9rem;
+
+    &__text {
+      transition: $anim-fast-ease;
+      cursor: pointer;
+      font-size: $f-size-big;
+      font-family: $f-family-raleway;
+      font-weight: $f-weight-extrabold;
+      letter-spacing: $f-letter-spacing-small;
+      text-decoration: none;
+      color: $color-yellow;
+
+      &:hover {
+        letter-spacing: 0.2em;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 2.3rem;
+    width: 30rem;
+    list-style: none;
+
+    @include mobileMaxBreakPoint {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+    transition: $anim-fast-ease;
+    cursor: pointer;
+    font-family: $f-family-oswald;
+    font-weight: $f-weight-medium;
+    letter-spacing: $f-letter-spacing-small;
+    color: $color-white-not-active;
+    text-decoration: none;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: 0%;
+      transition: $anim-fast-ease;
+      width: 1.5rem;
+      height: 0.2rem;
+      background-color: $color-yellow;
+    }
+
+    &:hover {
+      color: $color-white;
+
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__icon-container {
+    position: absolute;
+    right: 2.5rem;
+    width: 2rem;
+    height: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      .nav__menu-icon {
+        transform: rotate(60deg) translate(-0.5rem, 0.5rem);
+      }
+    }
+  }
+
+  &__menu-icon {
+    transition: $anim-fast-ease;
+    width: 1.5rem;
+    height: 1.1rem;
+
+    @include mobileMaxBreakPoint {
+      display: none;
+    }
+  }
+
+  &__burger-container {
+    display: none;
+
+    @include mobileMaxBreakPoint {
+      position: absolute;
+      z-index: $zindex-navbar;
+      right: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      width: 44px;
+      height: 35px;
+    }
+  }
+
+  &__burger-icon {
+    transition: $anim-normal-ease;
+    border-radius: 5rem;
+    width: 38px;
+    height: 3px;
+    background-color: $color-white;
+
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      transition: $anim-normal-ease;
+      border-radius: 5rem;
+      width: 38px;
+      height: 3px;
+      background-color: $color-white;
+    }
+
+    &:after {
+      transform: translateY(-10px);
+    }
+
+    &:before {
+      transform: translateY(10px);
+    }
+
+    &--active {
+      transform: translateX(-50px);
+
+      &:before {
+        transform: translate(50px, 0px) rotate(-45deg);
+        background-color: $color-yellow;
+      }
+
+      &:after {
+        transform: translate(50px, 0px) rotate(45deg);
+        background-color: $color-yellow;
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: $zindex-mobile-menu;
+  top: -100vh;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - #{$nav-height});
+  transition: $anim-normal-ease;
+
+  &--active {
+    top: $nav-height;
+  }
+
+  &__item {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    transition: $anim-normal-ease 0.3s;
+    cursor: pointer;
+    font-family: $f-family-oswald;
+    font-weight: $f-weight-medium;
+    font-size: $f-size-huge;
+    letter-spacing: $f-letter-spacing-small;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:nth-of-type(odd) {
+      transform: translateX(-100vw);
+      background-color: $color-black;
+      color: $color-white;
+    }
+
+    &:nth-of-type(even) {
+      transform: translateX(100vw);
+      background-color: $color-yellow;
+      color: $color-black;
+    }
+  }
+}
+
+div.mobile-menu a.mobile-menu__item--active {
+  transform: translateX(0);
+}

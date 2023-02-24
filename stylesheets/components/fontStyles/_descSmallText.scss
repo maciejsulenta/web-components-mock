@@ -1,0 +1,15 @@
+@use "../../abstracts/" as *;
+@use "../../base/" as *;
+
+.desc-small {
+  font-size: $f-size-small;
+  line-height: 125%;
+  font-family: $f-family-raleway;
+  font-weight: $f-weight-regular;
+  color: $color-white;
+  letter-spacing: 0.03em;
+
+  @include mobileMaxBreakPoint {
+    font-size: $f-size-big;
+  }
+}

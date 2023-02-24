@@ -1,0 +1,193 @@
+@use "../abstracts/" as *;
+@use "../base/" as *;
+
+.contact {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background-color: #333;
+
+  @include portraitBreakPoint {
+    height: 60vh;
+  }
+
+  @include mobileMaxBreakPoint {
+    height: fit-content;
+    padding: 3rem 0;
+  }
+
+  &__wrap {
+    position: relative;
+    top: 15%;
+    left: 9%;
+    display: flex;
+    gap: 5rem;
+    height: 85%;
+    width: 82%;
+
+    @include mobileMaxBreakPoint {
+      flex-direction: column;
+      gap: 5rem;
+      height: auto;
+    }
+  }
+}
+
+.form-wrap {
+  flex: 3;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+
+  @include tabletMaxBreakPoint {
+    width: 90%;
+  }
+
+  @include mobileMaxBreakPoint {
+    width: 100%;
+  }
+
+  &__input {
+    transition: $anim-fast-ease;
+    border: none;
+    border-bottom: 2px solid $color-white;
+    height: 5rem;
+    background-color: transparent;
+    font-size: $f-size-subtitle;
+    line-height: 133%;
+    font-family: $f-family-oswald;
+    font-weight: $f-weight-regular;
+    letter-spacing: 0.1em;
+    color: $color-white;
+
+    @include mobileMaxBreakPoint {
+      font-size: $f-size-huge;
+      text-align: center;
+    }
+
+    &::placeholder {
+      font-size: $f-size-small;
+      letter-spacing: 0.03em;
+
+      @include mobileMaxBreakPoint {
+        font-size: $f-size-big;
+      }
+    }
+
+    &:nth-child(1) {
+      border-top: 2px solid $color-white;
+    }
+
+    &:nth-child(5) {
+      padding-top: 1.5rem;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-yellow;
+    }
+  }
+
+  &__message {
+    font-family: $f-family-raleway;
+    font-size: $f-size-tiny;
+    color: $color-yellow;
+
+    @include mobileMaxBreakPoint {
+      font-size: $f-size-small;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: -7rem;
+    right: 0;
+    transition: $anim-normal-ease;
+    border: 2px solid $color-yellow;
+    outline: none;
+    width: 13rem;
+    height: 2.7rem;
+    background-color: $color-black;
+    cursor: pointer;
+    font-size: $f-size-tiny;
+    font-family: $f-family-raleway;
+    font-weight: $f-weight-bold;
+    text-transform: uppercase;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-yellow;
+      color: $color-black;
+    }
+
+    &:disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+
+    @include mobileMaxBreakPoint {
+      position: static;
+      margin: 4rem auto 0 auto;
+      width: 18rem;
+      height: 4rem;
+      font-size: $f-size-big;
+    }
+  }
+}
+
+.info-wrap {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.socials-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
+  padding-top: 2rem;
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__link {
+    transition: $anim-normal-ease;
+    text-decoration: none;
+
+    &:hover {
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+.scroll-button {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $anim-normal-ease;
+  border-radius: 50%;
+  width: 4rem;
+  max-width: 92px;
+  height: 4rem;
+  max-height: 92px;
+  background-color: $color-yellow;
+  cursor: pointer;
+  color: $color-black;
+
+  &:hover {
+    transform: scale(0.9) rotate(-360deg);
+    background-color: $color-white;
+  }
+}

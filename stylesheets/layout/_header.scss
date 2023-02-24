@@ -1,0 +1,145 @@
+@use "../abstracts/" as *;
+@use "../base/" as *;
+
+.header {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  min-height: 650px;
+  height: 100vh;
+
+  @include portraitBreakPoint {
+    height: 50vh;
+  }
+
+  @include tabletMaxBreakPoint {
+    height: fit-content;
+  }
+
+  @include mobileMaxBreakPoint {
+    height: 100vh;
+  }
+
+  &__content-wrap {
+    position: relative;
+    top: 9.7rem;
+    left: 7.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+    width: 25.5rem;
+    height: fit-content;
+
+    @include tabletMaxBreakPoint {
+      top: 6rem;
+      left: 3rem;
+    }
+
+    @include mobileMaxBreakPoint {
+      top: 45%;
+      left: 50%;
+      align-items: center;
+      gap: 3rem;
+      transform: translate(-50%, -50%);
+      border-radius: 2rem;
+      padding: 2em;
+      background-color: $color-black-opacity;
+    }
+  }
+
+  &__img-wrap {
+    position: absolute;
+    z-index: $zindex-background;
+    top: -3.5rem;
+    left: 26.5rem;
+    display: grid;
+    place-items: center;
+    transform: rotate(32.89deg);
+    width: 36rem;
+    height: 40rem;
+    font-size: 0.5em;
+
+    &--mobile {
+      position: absolute;
+      z-index: $zindex-background;
+      top: -20rem;
+      left: -15rem;
+      display: none;
+      transform: rotate(-20deg);
+      width: 35rem;
+
+      @include mobileMaxBreakPoint {
+        display: block;
+      }
+    }
+
+    @include pcMinBreakPoint {
+      left: auto;
+      right: -3rem;
+    }
+
+    @include tabletMaxBreakPoint {
+      left: 22rem;
+    }
+
+    @include mobileMaxBreakPoint {
+      top: 25rem;
+      left: 15rem;
+      transform: rotate(-40deg);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__aside-left,
+  &__aside-right {
+    position: absolute;
+    bottom: -1rem;
+    transform: rotate(-90deg);
+    transform-origin: left center;
+
+    @include mobileMaxBreakPoint {
+      border-radius: 2rem;
+      padding: 0.4em 2.5em;
+      background-color: $color-black-opacity;
+    }
+  }
+
+  &__aside-left {
+    left: 2.5rem;
+
+    @include tabletMaxBreakPoint {
+      top: 25rem;
+      bottom: auto;
+      left: 0;
+      transform: none;
+    }
+
+    @include mobileMaxBreakPoint {
+      top: 80%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__aside-right {
+    left: calc(100vw - 2.5rem);
+
+    @include tabletMaxBreakPoint {
+      top: 27.5rem;
+      bottom: auto;
+      left: 0;
+      transform: none;
+    }
+
+    @include mobileMaxBreakPoint {
+      top: calc(80% + #{$aside-info-span});
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

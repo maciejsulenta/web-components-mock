@@ -1,0 +1,16 @@
+@use "../../abstracts/" as *;
+@use "../../base/" as *;
+
+.desc-header {
+  font-size: $f-size-tiny;
+  font-family: $f-family-raleway;
+  font-weight: $f-weight-regular;
+  text-transform: uppercase;
+  color: $color-white;
+  line-height: 1.4rem;
+
+  @include mobileMaxBreakPoint {
+    font-size: $f-size-big;
+    text-align: center;
+  }
+}

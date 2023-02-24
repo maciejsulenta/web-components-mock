@@ -1,0 +1,73 @@
+@use "../abstracts/" as *;
+@use "../base/" as *;
+
+.your-success {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper {
+  position: absolute;
+  left: 6%;
+  width: 94%;
+  height: 100vh;
+  overflow: hidden;
+
+  @include portraitBreakPoint {
+    height: 70vh;
+  }
+
+  @include mobileMaxBreakPoint {
+    left: auto;
+    width: 100%;
+    height: 100vh;
+  }
+
+  &-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    max-height: 825px;
+    padding-bottom: 3rem;
+    background-color: $color-gray;
+    color: $color-white;
+
+    &:hover {
+      cursor: grab;
+    }
+
+    @include mobileMaxBreakPoint {
+      border: 1.5rem solid $color-black;
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 3rem;
+      width: 90%;
+
+      @include pcMinBreakPoint {
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+    }
+
+    &__number {
+      font-size: 5rem;
+      line-height: 108%;
+      font-family: $f-family-oswald;
+      font-weight: $f-weight-regular;
+      letter-spacing: 0.03em;
+
+      @include mobileMaxBreakPoint {
+        font-size: 10rem;
+      }
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+}

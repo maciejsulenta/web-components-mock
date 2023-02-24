@@ -1,0 +1,100 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="stylesheets/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+
+  <script src="components/navbar/navbar.js" type="text/javascript" defer></script>
+  <script src="components/sendButton.js" type="text/javascript" defer></script>
+  <script src="components/fontStyles/titleText.js" type="text/javascript" defer></script>
+  <script src="components/fontStyles/subtitleText.js" type="text/javascript" defer></script>
+  <script src="components/fontStyles/descSmallText.js" type="text/javascript" defer></script>
+  <script src="components/fontStyles/descTinyText.js" type="text/javascript" defer></script>
+  <script src="components/header/descHeader.js" type="text/javascript" defer></script>
+  <script src="components/header/asideInfo.js" type="text/javascript" defer></script>
+  <script src="components/header/asideSocials.js" type="text/javascript" defer></script>
+  <script src="components/header/header.js" type="text/javascript" defer></script>
+  <script src="components/asideSectionInfo.js" type="text/javascript" defer></script>
+  <script src="components/whyUs/whyUs.js" type="text/javascript" defer></script>
+  <script src="components/yourSuccess/yourSuccess.js" type="text/javascript" defer></script>
+  <script src="components/policeTape.js" type="text/javascript" defer></script>
+  <script src="components/services/services.js" type="text/javascript" defer></script>
+  <script src="components/team/team.js" type="text/javascript" defer></script>
+  <script src="components/questions/questions.js" type="text/javascript" defer></script>
+  <script src="components/contact/modal.js" type="text/javascript" defer></script>
+  <script src="components/contact/formValidator.js" type="module" defer></script>
+  <script src="components/contact/contact.js" type="module" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+  <script src="components/preloader.js" type="text/javascript" defer></script>
+
+  <title>Landing</title>
+</head>
+
+<body>
+  <website-preloader tapes='["1", "2", "1", "1", "2", "2", "2", "1", "1"]'></website-preloader>
+
+  <nav-bar name='["home", "why-we", "services", "team", "contacts"]'></nav-bar>
+
+  <header-layout
+    desc="A personal brand is our image in the minds of other people; this is how we are seen and perceived; it is our image that generates added value and creates benefits for us."
+    img="../landing/assets/images/headerImg.png"
+    asideLeft='["../landing/assets/images/twIcon.svg", "../landing/assets/images/ytIcon.svg", "../landing/assets/images/liIcon.svg", "../landing/assets/images/igIcon.svg", "../landing/assets/images/fbIcon.svg", "../landing/assets/images/phoneIcon.svg"]'
+    socialLinks='["https://twitter.com", "https://youtube.com", "https://linkedin.com", "https://instagram.com", "https://facebook.com", "tel:+48123123123"]'
+    logoAlt='["twitter-logo-icon", "youtube-logo-icon", "linkedin-logo-icon", "instagram-logo-icon", "facebook-logo-icon", "phone-icon"]'
+    asideRight="filtsagency@gmail.com">
+  </header-layout>
+
+  <why-us
+    img='["../landing/assets/images/whyUs1.png", "../landing/assets/images/whyUs2.png", "../landing/assets/images/whyUs3.png", "../landing/assets/images/whyUs4.png", "../landing/assets/images/whyUs5.png", "../landing/assets/images/whyUs6.png"]'
+    altData='["woman painting close to the sea", "old man is sewing something", "the bartender is making a drink", "cook is preparing the dish", "doctor is operating on a patient", "man is creating a sculpture"]'>
+  </why-us>
+
+  <your-success subtitles='["Intro", "Developing strategy", "Adjusting", "Getting it done", "Improving constantly"]'
+    img='["../landing/assets/images/yourSuccess1.png", "../landing/assets/images/yourSuccess2.png", "../landing/assets/images/yourSuccess3.png", "../landing/assets/images/yourSuccess4.png", "../landing/assets/images/yourSuccess5.png"]'
+    desc='["Getting to know each other, discuss the terms of cooperation.", "Creating content plan and the strategy for your success.", "Its easy to reach the goal when everything goes as planned, efforts bring results, and ones you planned from the beginning.", "When getting close to the success, you start thinking that the goal is not yours and you want smth else, achieve the goal first.", "Nobody starts the road to success fully equipped. Even the most prominent talents always train to raise their level."]'>
+  </your-success>
+
+  <police-tape img="../landing/assets/images/policeTape1.png"></police-tape>
+
+  <services-section subtitles='["You sleep, we work", "You eat, we work", "You watch movies, we work"]'
+    desc='["Getting to know each other on this stage, learn how to work smoothly", "Getting to know each other on this stage, learn how to work smoothly", "Getting to know each other on this stage, learn how to work smoothly"]'
+    img="../landing/assets/images/services.png"
+    tasks='["- Providing a personal PR manager", "- Conducting interviews", "- Follow-up analysis with the team", "- Creating content plan", "- Providing a personal PR manager", "- Conducting interviews", "- Follow-up analysis with the team", "- Creating content plan"]'>
+  </services-section>
+
+  <team-section
+    img='["../landing/assets/images/team1.png", "../landing/assets/images/team2.png", "../landing/assets/images/team3.png"]'
+    positions='["Marketer", "Media person", "Psychologist"]'
+    names='["Andriy Goncharenko", "Ivanna Kostenko", "Kateryna Khvulyova"]'
+    socialIcons='["../landing/assets/images/fbIcon.svg", "../landing/assets/images/igIcon.svg", "../landing/assets/images/liIcon.svg"]'
+    socialLinks='["https://facebook.com", "https://instagram.com", "https://linkedin.com"]'></team-section>
+
+  <police-tape img="../landing/assets/images/policeTape2.png"></police-tape>
+
+  <questions-section
+    questions='["How much time is needed to make personal brand work?", "What to start from if you dont know from what to start?", "How much time is needed to make personal brand work?", "What to start from if you dont know from what to start?"]'
+    answers='["Its the 24/7 support. You worry about nothing, because we do everything for you. The only thing you have to do is to work well, be inspired by your work, and conquer new heights.", "Its the 24/7 support. You worry about nothing, because we do everything for you. The only thing you have to do is to work well, be inspired by your work, and conquer new heights.", "Its the 24/7 support. You worry about nothing, because we do everything for you. The only thing you have to do is to work well, be inspired by your work, and conquer new heights.", "Its the 24/7 support. You worry about nothing, because we do everything for you. The only thing you have to do is to work well, be inspired by your work, and conquer new heights."]'>
+  </questions-section>
+
+  <contact-section
+    contactInfo='["+38 093 123 23 13", "filtsagency@gmail.com", "Facebook", "Instagram", "LinkedIn", "YouTube", "Twitter"]'
+    socialLinks='["tel:+48123123123", "mailto:filtsagency@gmail.com", "https://facebook.com", "https://instagram.com", "https://linkedin.com", "https://youtube.com", "https://twitter.com"]'>
+  </contact-section>
+
+  <contact-modal></contact-modal>
+
+  <footer-section
+    icons='["../landing/assets/images/twIcon.svg", "../landing/assets/images/ytIcon.svg", "../landing/assets/images/liIcon.svg", "../landing/assets/images/igIcon.svg", "../landing/assets/images/fbIcon.svg", "../landing/assets/images/phoneIcon.svg"]'
+    socialLinks='["https://twitter.com", "https://youtube.com", "https://linkedin.com", "https://instagram.com", "https://facebook.com", "tel:+48123123123"]'
+    logoAlt='["twitter-logo-icon", "youtube-logo-icon", "linkedin-logo-icon", "instagram-logo-icon", "facebook-logo-icon", "phone-icon"]'>
+  </footer-section>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+@use "../../abstracts/" as *;
+@use "../../base/" as *;
+
+.aside-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: $anim-fast-ease;
+  cursor: default;
+
+  @include tabletMaxBreakPoint {
+    position: relative;
+    left: 3rem;
+  }
+
+  @include mobileMaxBreakPoint {
+    left: auto;
+    gap: 1.2rem;
+  }
+
+  &:hover {
+    gap: 1.2rem;
+
+    .aside-socials__line {
+      background-color: $color-yellow;
+    }
+  }
+
+  &__line {
+    transition: $anim-normal-ease;
+    width: 4rem;
+    height: 2px;
+    background-color: $color-white;
+
+    @include tabletMaxBreakPoint {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: relative;
+    transform: rotate(90deg);
+    transition: $anim-normal-ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2) rotate(0deg);
+    }
+
+    @include tabletMaxBreakPoint {
+      transform: rotate(0deg);
+    }
+  }
+}

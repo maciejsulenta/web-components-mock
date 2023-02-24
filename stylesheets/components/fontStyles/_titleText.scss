@@ -1,0 +1,16 @@
+@use "../../abstracts/" as *;
+@use "../../base/" as *;
+
+.title-text {
+  font-size: $f-size-title;
+  line-height: 1em;
+  font-family: $f-family-oswald;
+  font-weight: $f-weight-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-white;
+
+  @include mobileMaxBreakPoint {
+    text-align: center;
+  }
+}

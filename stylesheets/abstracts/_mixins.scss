@@ -1,0 +1,25 @@
+@use "./variables" as *;
+
+@mixin mobileMaxBreakPoint {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tabletMaxBreakPoint {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin pcMinBreakPoint {
+  @media (min-width: $breakpoint-pc) {
+    @content;
+  }
+}
+
+@mixin portraitBreakPoint {
+  @media (orientation: portrait) {
+    @content;
+  }
+}

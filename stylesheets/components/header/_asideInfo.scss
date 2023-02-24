@@ -1,0 +1,54 @@
+@use "../../abstracts/" as *;
+@use "../../base/" as *;
+
+.aside-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: $anim-normal-ease;
+
+  @include tabletMaxBreakPoint {
+    position: relative;
+    left: 3rem;
+  }
+
+  @include mobileMaxBreakPoint {
+    left: auto;
+  }
+
+  &:hover {
+    gap: 2em;
+
+    .aside-info__line {
+      background-color: $color-yellow;
+    }
+
+    .aside-info__text {
+      color: $color-yellow;
+    }
+  }
+
+  &__line {
+    transition: $anim-normal-ease;
+    width: 4rem;
+    height: 2px;
+    background-color: $color-white;
+
+    @include tabletMaxBreakPoint {
+      display: none;
+    }
+  }
+
+  &__text {
+    transition: $anim-normal-ease;
+    font-size: $f-size-tiny;
+    font-family: $f-family-raleway;
+    font-weight: $f-weight-semibold;
+    color: $color-white;
+    text-decoration: none;
+
+    @include mobileMaxBreakPoint {
+      font-size: $f-size-big;
+    }
+  }
+}

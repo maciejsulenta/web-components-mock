@@ -1,0 +1,156 @@
+@use "../abstracts/" as *;
+@use "../base/" as *;
+
+.services {
+  position: relative;
+  width: 100%;
+
+  @include mobileMaxBreakPoint {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10rem;
+  }
+}
+
+.cards-wrap {
+  position: relative;
+  left: 12%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.8rem 0.8rem;
+  width: 83%;
+  height: 66%;
+  
+  @include portraitBreakPoint {
+    top: auto;
+  }
+
+  @include mobileMaxBreakPoint {
+    top: auto;
+    left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 13rem;
+    width: 90%;
+    height: auto;
+  }
+
+  &__card {
+    height: 100%;
+    perspective: 1000px;
+
+    &--column {
+      grid-row: span 2;
+    }
+  }
+}
+
+.card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: $anim-long-ease;
+  width: 100%;
+  background-color: $color-gray;
+
+  &--front,
+  &--back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    padding: 1em;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    @include mobileMaxBreakPoint {
+      gap: 2rem;
+      min-height: fit-content;
+    }
+  }
+
+  &--front {
+    position: relative;
+  }
+
+  &--back {
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    background-color: $color-white;
+  }
+
+  &__subtitle {
+    font-size: $f-size-subtitle;
+    line-height: 133%;
+    font-family: $f-family-oswald;
+    font-weight: $f-weight-semibold;
+    letter-spacing: 0.1em;
+
+    @include mobileMaxBreakPoint {
+      font-size: $f-size-big;
+    }
+  }
+
+  &__desc {
+    font-size: $f-size-tiny;
+    line-height: 139%;
+    font-family: $f-family-raleway;
+    font-weight: $f-weight-regular;
+    letter-spacing: 0.03rem;
+    padding-left: 1rem;
+
+    @include mobileMaxBreakPoint {
+      font-size: $f-size-medium;
+    }
+
+    &--bold {
+      padding: 0;
+      font-weight: $f-weight-bold;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+    width: 100%;
+
+    @include mobileMaxBreakPoint {
+      width: 80%;
+    }
+  }
+
+  &__button {
+    transition: $anim-fast-ease;
+    width: fit-content;
+    cursor: pointer;
+    font-size: $f-size-tiny;
+    line-height: 139%;
+    font-family: $f-family-raleway;
+    font-weight: $f-weight-regular;
+    letter-spacing: 3%;
+    color: $color-yellow;
+    text-decoration: underline;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &--span {
+      margin-top: 2rem;
+    }
+
+    &:hover {
+      letter-spacing: 0.1rem;
+      color: $color-white;
+    }
+
+    @include mobileMaxBreakPoint {
+      align-self: center;
+      font-size: $f-size-big;
+      text-align: center;
+    }
+  }
+}
+
+.rotate-card {
+  transform: rotateY(180deg);
+}

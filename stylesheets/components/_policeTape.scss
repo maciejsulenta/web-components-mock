@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+@use "../base/" as *;
+
+@keyframes slide {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-300vw);
+  }
+}
+
+.police-tape {
+  overflow: hidden;
+  margin: 4rem 0;
+  width: 100%;
+  min-height: 50px;
+  height: 3rem;
+  max-height: 72px;
+  background-color: $color-yellow;
+
+  &__content {
+    animation: #{slide} $anim-police-tape;
+    width: 400vw;
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
+  }
+}
